@@ -1,0 +1,13 @@
+doctype html
+
+block locals
+  - var title = 'My Website';
+
+html(landg="ja")
+  head
+    meta(charset="UTF-8")
+    meta(name='viewport' content="width=device-width, initial-scale=1")
+    title #{title}
+  body
+    include _menu.pug
+    block content
