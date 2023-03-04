@@ -13,8 +13,10 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
+        test: /\.(css|sass|scss)/,
+        use: [
+          MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader',
+        ]
       },
       {
         test: /\.(png|jpg)/,
@@ -59,6 +61,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/templates/access.pug',
       filename: 'access.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/templates/Members/taro.pug',
+      filename: 'members/taro.html',
     }),
     new CleanWebpackPlugin(),
   ]
